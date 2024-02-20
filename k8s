@@ -1,14 +1,4 @@
-# -------------------
-# Install Docker
-# -------------------
-# REF: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-docker.html
 #!/bin/bash
-sudo yum update -y
-sudo yum install docker -y
-sudo systemctl start docker
-sudo systemctl enable docker
-sudo usermod -aG docker $USER && newgrp docker
-
 # -------------------
 # Install K8S (Kubeadm)
 # -------------------

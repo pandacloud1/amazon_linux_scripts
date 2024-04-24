@@ -1,6 +1,6 @@
 # INSTALLING APACHE IN AMAZON LINUX 2
 
-# REF: https://medium.com/@laxmijayannavar/install-apache-web-server-on-amazon-linux-2-74c0f8f73dc6
+# REF: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html
 
 #!/bin/bash						# define shell
 sudo su -						# become root user

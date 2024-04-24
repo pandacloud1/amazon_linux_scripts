@@ -1,0 +1,16 @@
+# INSTRUCTIONS
+
+# 1. Create temporary instance (Server2) with a new key pair
+# 2. Stop the original instance (Server1) & detach the original volume 
+# 3. Attach the original volume to temporary instance
+
+# COMMANDS
+lsblk                                                                    # check the list of block storages and their mount points
+sudo mkdir /newvolume                                                    # create directory to mount the original volume
+sudo mount -o nouuid /dev/xvdf1 /newvolume                               # create mount point in temporary volume
+cp .ssh/authorized_keys /newvolume/home/ec2-user/.ssh/authorized_keys    # copy key data from temp volume to original volume
+sudo umount /newvolume                                                   # unmount original volume
+
+# 4. Go to AWS EC2 console & Stop the temporary instance.
+# 5. Detach Original Volume from Temp Instance; and attach it to original Instance with the device name '/dev/xvda'.
+# 6. We can now access our original instance w/ a new key pair.

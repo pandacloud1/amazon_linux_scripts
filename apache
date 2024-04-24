@@ -1,0 +1,11 @@
+# INSTALLING APACHE IN AMAZON LINUX 2
+
+# REF: https://medium.com/@laxmijayannavar/install-apache-web-server-on-amazon-linux-2-74c0f8f73dc6
+
+#!/bin/bash					                            	# define the shell type
+sudo su -					                              	# become root user
+yum update -y					                          	# update the server
+yum install httpd -y				                    	# install apache webserver package in Linux
+service httpd start				                      	# start apache service
+chkconfig httpd on					                      # keep apache running in background after reboot
+echo "THIS IS MY FIRST SERVER" > /var/www/html 		# to put content in index.html file

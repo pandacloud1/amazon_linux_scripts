@@ -3,6 +3,8 @@
 #REF: https://stackoverflow.com/questions/57784287/how-to-install-nginx-on-aws-ec2-linux-2
 
 #!/bin/bash
+sleep 30
+
 sudo su -
 yum update -y
 sudo amazon-linux-extras install nginx1 -y

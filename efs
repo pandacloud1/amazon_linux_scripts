@@ -1,4 +1,4 @@
-# EFS: The below commands are used to install EFS packages in your Amazon Linux 2 Servers
+# EFS: The below commands are used to install EFS package in your Amazon Linux 2 Servers
 # REF: https://docs.aws.amazon.com/efs/latest/ug/installing-amazon-efs-utils.html
 
 # ***=== PRE-REQUISITE ===***

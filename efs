@@ -1,0 +1,15 @@
+# EFS: The below commands are used to install EFS packages in your Amazon Linux 2 Servers
+# ***=== PRE-REQUISITE ===***
+# 1. EC2 & EFS have to be in same Security group
+# 2. Security group must be enabled with port 'NFS'
+# 3. Amazon-efs-utils package to be installed in all servers
+
+#Run below commands in both Linux instances (Under user-data):
+
+#!/bin/bash
+sudo su -
+yum update -y
+yum install amazon-efs-utils -y
+mkdir efs #(Copy & paste command from EFS--> Attach --> Using NFS client)
+cd efs
+touch file1 #(The 'file1' is created in first instance & the same has to be seen in second instance)

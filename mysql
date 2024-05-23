@@ -8,3 +8,31 @@ sudo yum install mysql -y
 # Command to access RDS through Bastion
 mysql -h <RDS-endpoint> -u admin –p (Enter)
 # (Enter your password)
+
+
+# ==========================
+# OPTIONAL
+# ==========================
+# HOW TO CREATE DATABASE IN RDS
+
+# Create a new database
+CREATE DATABASE my_database;
+
+# Switch to the newly created database
+USE my_database;
+
+# Create a table
+CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    mobile_no VARCHAR(15) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+
+# Insert values in the table
+INSERT INTO contacts (name, mobile_no, email) VALUES ('alex', '987654321', 'alex@gmail.com');
+INSERT INTO contacts (name, mobile_no, email) VALUES ('brian', '987654322', 'brian@gmail.com');
+INSERT INTO contacts (name, mobile_no, email) VALUES ('charlie', '987654323', 'charlie@gmail.com');
+
+# View the table
+SELECT * FROM contacts;

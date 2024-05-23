@@ -13,7 +13,7 @@ mysql -h <RDS-endpoint> -u admin –p (Enter)
 # ==========================
 # OPTIONAL
 # ==========================
-# HOW TO CREATE DATABASE IN RDS
+# HOW TO ADD ENTRIES IN RDS DATABASE
 
 # Create a new database
 CREATE DATABASE my_database;

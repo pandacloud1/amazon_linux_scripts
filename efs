@@ -6,7 +6,7 @@
 # 2. Security group must be enabled with port 'NFS'
 # 3. Amazon-efs-utils package to be installed in all servers
 
-#Run below commands in both Linux instances (Under user-data):
+#Run below commands in all Linux instances (Under user-data):
 
 #!/bin/bash
 sudo su -

@@ -1,0 +1,6 @@
+# Installing stress package in Amazon Linux 2
+# REF: https://gist.github.com/mikepfeiffer/d27f5c478bef92e8aff4241154b77e54
+
+sudo amazon-linux-extras install epel -y
+sudo yum install stress –y
+stress –-cpu 40

@@ -4,3 +4,9 @@
 sudo amazon-linux-extras install epel -y
 sudo yum install stress –y
 stress –-cpu 40
+
+
+# OPTIONAL #
+# We can also trigger CloudWatch test alarm by running below command
+# REF: https://docs.aws.amazon.com/cli/latest/reference/cloudwatch/set-alarm-state.html
+aws cloudwatch set-alarm-state --alarm-name "myalarm" --state-value ALARM --state-reason "testing purposes"

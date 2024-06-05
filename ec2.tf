@@ -1,4 +1,8 @@
-# NOTE: Save the file with extension '.tf'
+## =====================
+## TERRAFORM CODE
+## =====================
+# (NOTE: Save the file with extension '.tf')
+
 # STEP1: DEFINE AWS VERSION
 terraform {
   required_providers {
@@ -23,3 +27,18 @@ resource "aws_instance" "My_Server" {
     Name = "My_Server"
   }
 }
+
+## =====================
+## TERRAFORM COMMANDS
+## =====================
+# To initialize & download provider plugin
+terraform init
+
+# To see what is planned to be created
+terraform plan
+
+# To create resources
+terraform apply
+
+# To delete resources
+terraform destroy

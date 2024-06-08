@@ -1,3 +1,6 @@
+# ======================================
+# INSTALLING MYSQL in AMAZON LINUX 2
+# ======================================
 #!/bin/bash
 sleep60
 
@@ -9,12 +12,9 @@ sudo yum install mysql -y
 mysql -h <RDS-endpoint> -u admin –p (Enter)
 # (Enter your password)
 
-
-# ==========================
-# OPTIONAL
-# ==========================
-# HOW TO ADD ENTRIES IN RDS DATABASE
-
+# ==============================
+# ADDING ENTRIES IN RDS DATABASE
+# ==============================
 # Create a new database
 CREATE DATABASE my_database;
 
@@ -36,3 +36,23 @@ INSERT INTO contacts (name, mobile_no, email) VALUES ('ethan', '9876543230', 'et
 
 # View the table
 SELECT * FROM contacts;
+
+# ======================================
+# INSTALLING MYSQL IN AMAZON LINUX 2023
+# ======================================
+#!/bin/bash
+sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+sudo yum install mysql80-community-release-el9-1.noarch.rpm -y
+yum repolist enabled | grep "mysql.*-community.*"
+sudo yum install mysql-community-server -y
+sudo systemctl start mysqld
+mysql --version
+
+# ======================================
+# INSTALLING MYSQL IN UBUNTU 22.04
+# ======================================
+#!/bin/bash
+sudo apt update -y
+sudo apt install mysql-server -y
+sudo systemctl start mysql.service
+mysql --version

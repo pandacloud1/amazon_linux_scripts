@@ -41,6 +41,7 @@ SELECT * FROM contacts;
 # INSTALLING MYSQL IN AMAZON LINUX 2023
 # ======================================
 # REF: https://dev.to/aws-builders/installing-mysql-on-amazon-linux-2023-1512
+
 #!/bin/bash
 sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
 sudo yum install mysql80-community-release-el9-1.noarch.rpm -y

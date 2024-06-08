@@ -44,10 +44,9 @@ SELECT * FROM contacts;
 
 #!/bin/bash
 sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
-sudo yum install mysql80-community-release-el9-1.noarch.rpm -y
-yum repolist enabled | grep "mysql.*-community.*"
-sudo yum install mysql-community-server -y
-sudo systemctl start mysqld
+sudo dnf install mysql80-community-release-el9-1.noarch.rpm -y
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+sudo dnf install mysql-community-client -y
 mysql --version
 
 # ======================================

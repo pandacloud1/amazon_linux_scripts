@@ -5,8 +5,7 @@
 #!/bin/bash
 sleep 30
 
-sudo su -
-yum update -y
+sudo yum update -y
 sudo amazon-linux-extras install nginx1 -y
 # vi /usr/share/nginx/html/index.html
 # (Edit the files as per your requirement)

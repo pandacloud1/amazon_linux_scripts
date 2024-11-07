@@ -6,10 +6,12 @@ sudo su -
 yum update -y
 yum install amazon-efs-utils -y
 
-mkdir efs #(Copy & paste command from EFS--> Attach --> Using NFS client)
+mkdir efs 
+# Paste the command from EFS --> Attach --> Using NFS client
 
 cd efs
-touch file1 #(The 'file1' is created in first instance & the same will be visible from the second instance)
+touch file1 
+# The 'file1' created in 'Server1' will be visible in 'Server2'
 
 # ----------
 # NOTE:

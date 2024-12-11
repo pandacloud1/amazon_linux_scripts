@@ -14,3 +14,8 @@ sudo umount /newvolume                                                   # unmou
 # 4. Go to AWS EC2 console & Stop the temporary instance.
 # 5. Detach Original Volume from Temp Instance; and attach it to original Instance with the device name '/dev/xvda'.
 # 6. We can now access our original instance w/ a new key pair.
+
+# Note:
+# What is nouuid?
+  nouuid: No Universally Unique Identifier
+  This command is useful when using a disk copied from another system

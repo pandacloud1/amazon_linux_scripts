@@ -6,11 +6,11 @@
 
 # COMMANDS
 lsblk                                                                    # check the list of block storages and their mount points, note the name of new volume
-sudo mkdir /newvolume                                                    # create directory to mount the original volume
-sudo mount -o nouuid /dev/xvdf1 /newvolume                               # create mount point in temporary volume 
+sudo mkdir /disk2                                                        # create directory to mount the original volume
+sudo mount -o nouuid /dev/xvdf1 /disk2                                   # create mount point in temporary volume 
                                                                          # (Here 'xvdf1' is an name of volume, replace it with actual volume name xvdb1, xvdc1, etc)
-cp .ssh/authorized_keys /newvolume/home/ec2-user/.ssh/authorized_keys    # copy key data from temp volume to original volume
-sudo umount /newvolume                                                   # unmount original volume
+cp .ssh/authorized_keys /disk2/home/ec2-user/.ssh/authorized_keys        # copy key data from temp volume to original volume
+sudo umount /disk2                                                       # unmount original volume
 
 # 4. Go to AWS EC2 console & Stop the temporary instance.
 # 5. Detach Original Volume from Temp Instance; and attach it to original Instance with the device name '/dev/xvda'.

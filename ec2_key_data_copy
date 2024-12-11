@@ -1,20 +1,32 @@
 # INSTRUCTIONS
+# Ref: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replacing-key-pair.html
 
-# 1. Create temporary instance (Server2) with a new key pair
-# 2. Stop the original instance (Server1) & detach the original volume 
-# 3. Attach the original volume to temporary instance
+# STEP1: 
+  Create temporary instance (Server2) with a new key pair
+
+# STEP2: 
+  Stop the original instance (Server1) & detach the original volume 
+
+# STEP3: 
+  Attach the original volume to temporary instance
 
 # COMMANDS
 lsblk                                                                    # check the list of block storages and their mount points, note the name of new volume
 sudo mkdir /disk2                                                        # create directory to mount the original volume
 sudo mount -o nouuid /dev/xvdf1 /disk2                                   # create mount point in temporary volume 
-                                                                         # (Here 'xvdf1' is an name of volume, replace it with actual volume name xvdb1, xvdc1, etc)
+                                                                         # (Here 'xvdf1' is an name of volume, replace it with actual volume name xvdb1, xvdc1, etc from lsblk command)
+                                                                         # nouuid: No Universally Unique Identifier, this is useful when a disk is copied from another system
 cp .ssh/authorized_keys /disk2/home/ec2-user/.ssh/authorized_keys        # copy key data from temp volume to original volume
 sudo umount /disk2                                                       # unmount original volume
 
-# 4. Go to AWS EC2 console & Stop the temporary instance.
-# 5. Detach Original Volume from Temp Instance; and attach it to original Instance with the device name '/dev/xvda'.
-# 6. We can now access our original instance w/ a new key pair.
+# STEP4: 
+  Go to AWS EC2 console & Stop the temporary instance.
+
+# STEP5: 
+  Detach Original Volume from Temp Instance; and attach it to original Instance with the device name '/dev/xvda'.
+
+# STEP6: 
+  We can now access our original instance w/ a new key pair.
 
 # Note:
 # What is nouuid?

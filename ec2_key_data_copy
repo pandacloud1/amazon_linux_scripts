@@ -5,9 +5,10 @@
 # 3. Attach the original volume to temporary instance
 
 # COMMANDS
-lsblk                                                                    # check the list of block storages and their mount points
+lsblk                                                                    # check the list of block storages and their mount points, note the name of new volume
 sudo mkdir /newvolume                                                    # create directory to mount the original volume
-sudo mount -o nouuid /dev/xvdf1 /newvolume                               # create mount point in temporary volume
+sudo mount -o nouuid /dev/xvdf1 /newvolume                               # create mount point in temporary volume 
+                                                                         # (Here 'xvdf1' is an name of volume, replace it with actual volume name xvdb1, xvdc1, etc)
 cp .ssh/authorized_keys /newvolume/home/ec2-user/.ssh/authorized_keys    # copy key data from temp volume to original volume
 sudo umount /newvolume                                                   # unmount original volume
 

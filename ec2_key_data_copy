@@ -13,6 +13,7 @@
 # COMMANDS
 lsblk                                                                    # check the list of block storages and their mount points, note the name of new volume
 sudo mkdir /disk2                                                        # create directory to mount the original volume
+sudo mkfs -t ext4 /dev/xvdf1                                             # to create a filesystem (it is used to organize file structure for external devices)
 sudo mount -o nouuid /dev/xvdf1 /disk2                                   # create mount point in temporary volume 
                                                                          # (Here 'xvdf1' is an name of volume, replace it with actual volume name xvdb1, xvdc1, etc from lsblk command)
                                                                          # nouuid: No Universally Unique Identifier, this is useful when a disk is copied from another system
@@ -32,3 +33,11 @@ sudo umount /disk2                                                       # unmou
 # What is nouuid?
   nouuid: No Universally Unique Identifier
   This command is useful when using a disk copied from another system
+
+# To make the volume PERSISTENT (i.e., permanently mount to VM even if VM restarts) then follow below steps:
+sudo vi /etc/fstab
+# add below
+/dev/xvdf1 /disk2 ext4 defaults,nofail 0 2
+# here: /dev/xvdf1 is your volume
+        /disk2 is the mount point
+        ext4 is the filesystem

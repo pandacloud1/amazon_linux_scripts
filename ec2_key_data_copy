@@ -14,7 +14,7 @@
 lsblk                                                                    # check the list of block storages and their mount points, note the name of new volume
 sudo mkdir /disk2                                                        # create directory to mount the original volume
 sudo mkfs -t ext4 /dev/xvdf1                                             # to create a filesystem (it is used to organize file structure for external devices)
-sudo mount /dev/xvdf1 /disk2                                   # create mount point in temporary volume 
+sudo mount /dev/xvdf1 /disk2                                             # create mount point in temporary volume 
                                                                          # (Here 'xvdf1' is an name of volume, replace it with actual volume name xvdb1, xvdc1, etc from lsblk command)
                                                                          # nouuid: No Universally Unique Identifier, this is useful when a disk is copied from another system
 cp .ssh/authorized_keys /disk2/home/ec2-user/.ssh/authorized_keys        # copy key data from temp volume to original volume

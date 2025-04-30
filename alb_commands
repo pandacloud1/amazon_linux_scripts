@@ -1,7 +1,7 @@
-#!/bin/bash									#to enter the terminal
-sudo su -									#to become root user
-yum update -y									#to update the server
-yum install httpd -y								#to install apache webserver package in Linux
-service httpd start								#to start apache service
-chkconfig httpd on								#to keep httpd running in background after reboot
-echo "WELCOME TO SERVER NO. $(hostname -i)" > /var/www/html/index.html 		#to put content in html file
+#!/bin/bash									
+sudo su -								
+sudo yum update -y									
+sudo yum install httpd -y								
+sudo service httpd start							
+chkconfig httpd on							
+sudo echo "WELCOME TO SERVER NO. $(hostname -i)" > /var/www/html/index.html 		
